@@ -1,5 +1,6 @@
 package itachi_waiyan.com.padc_firebase_assignment.activities
 
+import android.app.ProgressDialog
 import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
@@ -26,12 +27,14 @@ import java.util.*
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
 import com.google.firebase.auth.GoogleAuthProvider
+import itachi_waiyan.com.padc_firebase_assignment.MainActivity
 
 class LoginActivity : AppCompatActivity(), OnCompleteListener<AuthResult> {
 
     lateinit var callbackManager : CallbackManager
     lateinit var auth : FirebaseAuth
     private lateinit var googleSignInClient: GoogleSignInClient
+    lateinit var progressDialog : ProgressDialog
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -95,17 +98,34 @@ class LoginActivity : AppCompatActivity(), OnCompleteListener<AuthResult> {
         }
 
         btn_login.setOnClickListener{
+            showLoading()
             signInWithEmailPassword(et_username.text.toString(),et_password.text.toString())
         }
 
         btn_facebook.setOnClickListener {
+            showLoading()
             signInWithFacebook()
         }
 
         btn_google.setOnClickListener {
+            showLoading()
             signInWithGoogle()
         }
 
+    }
+
+    fun showLoading() {
+        progressDialog = ProgressDialog(this)
+        progressDialog.setCancelable(false)
+        if (!progressDialog.isShowing() && !isFinishing) {
+            progressDialog.show()
+        }
+    }
+
+    fun hideLoading() {
+        if (progressDialog!=null && progressDialog.isShowing()) {
+            progressDialog.dismiss()
+        }
     }
 
     //Facebook sign in
@@ -114,12 +134,15 @@ class LoginActivity : AppCompatActivity(), OnCompleteListener<AuthResult> {
         LoginManager.getInstance().registerCallback(callbackManager,object : FacebookCallback<LoginResult>{
             override fun onSuccess(result: LoginResult?) {
                 if(result!=null){
-                    Log.d("test---","callback")
-                    Log.d("test---","access token "+result.accessToken)
                     GraphRequest.newMeRequest(result.accessToken,object : GraphRequest.GraphJSONObjectCallback{
                         override fun onCompleted(`object`: JSONObject?, response: GraphResponse?) {
-                            Log.d("test---","onComplete")
-                            Log.d("test---","email "+`object`!!.getString("email"))
+
+                            hideLoading()
+                            startActivity(MainActivity.newIntent(applicationContext,`object`!!.getString("name"),
+                                `object`!!.getString("email"),
+                                "NULL",
+                                `object`!!.getString("public_profile")
+                            ))
                         }
 
                     })
@@ -129,6 +152,7 @@ class LoginActivity : AppCompatActivity(), OnCompleteListener<AuthResult> {
             }
 
             override fun onCancel() {
+                hideLoading()
                 Log.d("test---","cancel")
             }
 
@@ -158,8 +182,8 @@ class LoginActivity : AppCompatActivity(), OnCompleteListener<AuthResult> {
 
     // For email login
     override fun onComplete(p0: Task<AuthResult>) {
-        Log.d("test---","Completed email login")
-        Toast.makeText(this,"Completed",Toast.LENGTH_SHORT).show()
+        hideLoading()
+        startActivity(MainActivity.newIntent(this,"NULL",et_username.text.toString(),"NULL",null))
     }
 
 
@@ -176,12 +200,13 @@ class LoginActivity : AppCompatActivity(), OnCompleteListener<AuthResult> {
                 auth.signInWithCredential(credential)
                     .addOnCompleteListener(this) { task ->
                         if (task.isSuccessful) {
-                            Log.d("test---", "signInWithCredential:success")
                             val user = auth.currentUser
-                            Log.d("test---","display name "+user?.displayName)
-                            Log.d("test---","photo url "+user?.photoUrl)
-                            Log.d("test---","email "+user?.email)
-                            Log.d("test---","phone number "+user?.phoneNumber)
+                            hideLoading()
+                            startActivity(MainActivity.newIntent(this,user?.displayName.toString(),
+                                user?.email.toString(),
+                                user?.phoneNumber.toString(),
+                                user?.photoUrl.toString()
+                                ))
                         } else {
                             Log.w("test---", "signInWithCredential:failure", task.exception)
                         }

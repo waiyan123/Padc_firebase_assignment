@@ -4,6 +4,8 @@ apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
 
+apply plugin: 'kotlin-kapt'
+
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.2"
@@ -48,6 +50,13 @@ dependencies {
 
     //Facebook sdk
     implementation 'com.facebook.android:facebook-android-sdk:5.11.0'
+
+    //Circle Image View
+    implementation 'com.mikhaellopez:circularimageview:4.1.0'
+
+    //Glide
+    implementation 'com.github.bumptech.glide:glide:4.10.0'
+    kapt 'com.github.bumptech.glide:compiler:4.10.0'
 }
 
 apply plugin: 'com.google.gms.google-services'
