@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+
+    <color name="colorMainLayout">#FF6A06</color>
+    <color name="colorMainSecondary">#9E9E9E</color>
+    <color name="textColorSecondaryLight">#BDBDBD</color>
+    <color name="textColorSecondary">#7c8491</color>
+    <color name="titleBarColorMain">#D97D54</color>
+
+    <color name="textColorMain">#333333</color>
+    <color name="textColor2">#FFFFFFFF</color>
+    <color name="textColorHighlight">#FF6E40</color>
+    <color name="white">#FFFFFF</color>
+    <color name="highlight">#FF6E40</color>
+    <color name="colorMainBackground">#F0F0F7</color>
+    <color name="iconColorMain">#F79632</color>
+    <color name="iconColorSecondary">#9E9E9E</color>
+    <color name="textColorPrimaryLight">#cccccc</color>
+    <color name="iconColor2">#00a90a</color>
+    <color name="iconColor3">#00a90a</color>
+    <color name="buttonColorSecondaryLight">#b6b5aa</color>
+    <color name="iconColorCore">#43425D</color>
+    <color name="transparent">#80F48FB1</color>
+    <color name="ratingColor">#FFEB3B</color>
+    <color name="blue">#1e90ff</color>
+    <color name="light_blue">#369</color>
+    <color name="black">#000</color>
+    <color name="red">#900</color>
+    <color name="purple">#9932CC</color>
+    <color name="facebook_background_color">#3b5998 </color>
+    <color name="google_background_color">#e53134</color>
+
+</resources>

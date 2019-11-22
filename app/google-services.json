@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "591133556842",
+    "firebase_url": "https://padcfirebaseassignment.firebaseio.com",
+    "project_id": "padcfirebaseassignment",
+    "storage_bucket": "padcfirebaseassignment.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:591133556842:android:1d28049aa6a5899c014a13",
+        "android_client_info": {
+          "package_name": "itachi_waiyan.com.padc_firebase_assignment"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "591133556842-j340e09u809es2gb803r67efi391ll95.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "itachi_waiyan.com.padc_firebase_assignment",
+            "certificate_hash": "fc2a48898101f2225763d1eb8d26f5e4723d92af"
+          }
+        },
+        {
+          "client_id": "591133556842-4arrom1r8ra1ag53qad8nbddumjpooas.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA8jIuf5ir7vY6Y2FXC9sNbXfpMdls5RZc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "591133556842-4arrom1r8ra1ag53qad8nbddumjpooas.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

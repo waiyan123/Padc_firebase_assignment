@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:backgroundTint="@color/white"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:backgroundTint="@color/white"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:src="@drawable/logo"
+        android:id="@+id/img_logo"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_margin="100dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"/>
+
+    <com.google.android.material.textfield.TextInputLayout
+        app:layout_constraintTop_toBottomOf="@id/img_logo"
+        android:id="@+id/input_text_username"
+        android:textColorHint="@color/colorMainLayout"
+        android:outlineAmbientShadowColor="@color/colorMainLayout"
+        android:layout_margin="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.google.android.material.textfield.TextInputEditText
+            android:hint="UserName"
+            android:id="@+id/et_username"
+            android:textColorHint="@color/colorMainLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/input_text_password"
+        app:layout_constraintTop_toBottomOf="@id/input_text_username"
+        android:layout_margin="30dp"
+        android:textColorHint="@color/colorMainLayout"
+        android:outlineAmbientShadowColor="@color/colorMainLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.google.android.material.textfield.TextInputEditText
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:id="@+id/et_password"
+            android:textColorHint="@color/colorMainLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:text="Forgot Password ?"
+        android:id="@+id/tv_forgot_password"
+        android:layout_margin="30dp"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/input_text_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+<!--    <LinearLayout-->
+<!--        android:id="@+id/layout_login"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/tv_forgot_password"-->
+<!--        app:layout_constraintLeft_toLeftOf="parent"-->
+<!--        app:layout_constraintRight_toRightOf="parent"-->
+<!--        android:background="@drawable/location_shape_background"-->
+<!--        android:layout_margin="50dp"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content">-->
+<!--        <androidx.appcompat.widget.AppCompatTextView-->
+<!--            android:text="LOGIN"-->
+<!--            android:layout_marginLeft="100dp"-->
+<!--            android:layout_marginRight="100dp"-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            android:layout_marginBottom="10dp"-->
+<!--            android:textColor="@color/colorMainLayout"-->
+<!--            android:textAppearance="@style/TextAppearance.AppCompat.Large"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"/>-->
+
+<!--    </LinearLayout>-->
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_login"
+        android:enabled="false"
+        android:text="LOGIN"
+        app:layout_constraintTop_toBottomOf="@id/tv_forgot_password"
+        android:layout_margin="50dp"
+        android:paddingLeft="100dp"
+        android:paddingRight="100dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:textColor="@color/textColorSecondaryLight"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:background="@drawable/location_shape_background"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/tv_connect_with"
+        android:text="-------------- OR CONNECT WITH --------------"
+        app:layout_constraintTop_toBottomOf="@id/btn_login"
+        android:layout_marginTop="10dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
+<!--    <com.facebook.login.widget.LoginButton-->
+<!--        android:id="@+id/btn_login_with_facebook"-->
+<!--        app:layout_constraintTop_toBottomOf="@id/tv_connect_with"-->
+<!--        app:layout_constraintLeft_toLeftOf="parent"-->
+<!--        app:layout_constraintRight_toRightOf="parent"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_gravity="center_horizontal"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:layout_marginBottom="30dp" />-->
+
+    <LinearLayout
+        android:id="@+id/btn_facebook"
+        app:layout_constraintTop_toBottomOf="@id/tv_connect_with"
+        app:layout_constraintLeft_toLeftOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="10dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="20dp"
+        android:background="@drawable/facebook_button_background"
+        android:gravity="center">
+        <ImageView
+            android:src="@drawable/facebook_logo"
+            android:layout_width="50dp"
+            android:layout_height="50dp"/>
+        <TextView
+            android:text="FACEBOOK"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/btn_google"
+        app:layout_constraintTop_toBottomOf="@id/tv_connect_with"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginRight="50dp"
+        android:layout_marginTop="10dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="20dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:background="@drawable/google_button_background"
+        android:gravity="center">
+        <ImageView
+            android:src="@mipmap/google_logo"
+            android:scaleType="centerCrop"
+            android:layout_width="40dp"
+            android:layout_height="40dp"/>
+        <TextView
+            android:text="GOOGLE"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
